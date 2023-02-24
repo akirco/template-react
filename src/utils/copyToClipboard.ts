@@ -1,0 +1,8 @@
+const copyToClipboard = (str: string) => {
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(str);
+  }
+  return Promise.reject('The Clipboard API is not avaliable!');
+};
+
+export default copyToClipboard;
